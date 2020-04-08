@@ -1,0 +1,43 @@
+﻿@page
+@model ITHS_DB_Lab3_Web.AnvändareModel
+@{
+    ViewData["Title"] = "Användare";
+}
+<h1>Info Om Användare</h1>
+
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Förnamn</th>
+            <th>Efternamn</th>
+            <th>Ålder</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var använd in Model.lista)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => använd.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => använd.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => använd.Lastname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => använd.Ålder)
+            </td>
+            <td>
+                <a asp-page="Radera" asp-route-companyid="@använd.Id.ToString()">Delete</a>
+            </td>
+        </tr>
+            // skapa sida för "delete company"
+         }
+    </tbody>
+</table>
+<a asp-page="Redigera">Add New User</a>

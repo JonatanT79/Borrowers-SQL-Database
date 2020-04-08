@@ -1,0 +1,26 @@
+﻿@page
+@model ITHS_DB_Lab3_Web.RedigeraModel
+@{
+    ViewData["Title"] = "Redigera";
+}
+<h1>Redigera</h1>
+
+<form method="post">
+    <label asp-for="Redigera.Id"></label>
+    <input asp-for="Redigera.Id" />
+    <div>
+        <label asp-for="Redigera.Name"></label>
+        <input asp-for="Redigera.Name" />
+    </div>
+    <div>
+        <label asp-for="Redigera.Lastname"></label>
+        <input asp-for="Redigera.Lastname" />
+    </div>
+    <div>
+        <label asp-for="Redigera.Ålder"></label>
+        <input asp-for="Redigera.Ålder" />
+    </div>
+    <div>
+        <input type="submit" value="Save" />
+    </div>
+</form>
